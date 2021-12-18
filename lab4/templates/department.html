@@ -1,0 +1,15 @@
+{#{% extends 'base.html' %}#}
+{% load static %}
+{% block title %}Кафедра: {{ data.name }}{% endblock %}
+{% block content %}
+    <div>{{ data.name }}
+        {% for department in data.departments %}
+            {% if department.name == data.name %}
+                {{ department.desc }}
+                <br>
+                <img src="{% static department.img %}" width="600" height="600" alt = "{% static department.img %}">
+            {% endif %}
+        {% endfor %}
+    </div>
+    <br><a href="{% url 'main' %}">На главную</a>
+{% endblock %}

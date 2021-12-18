@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Список кафедр ИУ{% endblock %}
+{% block content %}
+    <div>Топ 3 кафедры</div>
+<ul>
+    {% for department in data.departments %}
+        <li><a href="{% url 'department_url' department.name %}">{{ department.name }}</a></li>
+    {% empty %}
+        <li>Список пуст</li>
+    {% endfor %}
+</ul>
+{% endblock %}
