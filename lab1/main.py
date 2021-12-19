@@ -13,6 +13,9 @@ while complete == 'y':
     B = args.B
     C = args.C
     if A == None and B == None and C == None:
+        complete = input('Продолжить? (y/n):  ')
+        if complete == 'n':
+            exit()
         A = input('A= ')
         B = input('B= ')
         C = input('C= ')
